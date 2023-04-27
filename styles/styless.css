@@ -411,6 +411,7 @@ html{
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 1;
 }
 @media screen and (max-width: 768px){
 .header{
@@ -471,6 +472,7 @@ html{
     color: #E3B873;
     margin-right: 95px;
 }
+
 @media screen and (max-width: 768px){
     .logo{
         margin: 0;
@@ -557,7 +559,7 @@ html{
 /*intro style start*/
 
 .intro{
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url(../images/image\ 4.3.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url(../images/turnkey2.svg);
     background-image: no-repeat center;
     background-size: cover;
     height: 707px;
@@ -821,7 +823,7 @@ html{
         display: flex;
         text-align: center;
         margin-bottom: 36px;
-        background-image: url(../images/m_room.jpg);
+        background-image: url(../images/mob_room.svg);
         height: 241px;
     }
 
@@ -873,7 +875,7 @@ html{
         line-height: 19px;
     }
 }
-.complect_project_dd{
+.complect_project_dd1, .complect_project_dd2,.complect_project_dd3,.complect_project_dd4{
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
@@ -925,19 +927,36 @@ background:transparent;
 margin-right: 19px;
 }
 
-.button_left_arrows_low{
+/* .button_left_arrows_low{
     background:transparent;
     margin-right: 7px;   
+} */
+
+
+.dots_wrapper{
+    display: flex;
+    justify-content: center;
 }
 
-.button_left_arrows_low3{
-    background:transparent;
+.dot{
+    width: 13px;
+    height: 13px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    margin-left: 17.54px;
+    margin-right: 17.54px;
+}
+
+.dot.active{
+    background: rgb(255, 255, 255);
 }
 
 .button_right_arrows{
     border-style: none;
     background:transparent;
-    margin-left: 19px;
+    margin-left: 11px;
+    
 }
 
 /*grid style right*/
@@ -949,14 +968,15 @@ margin-right: 19px;
 }
 
 .button_right{
-    display: block;
+    display: flex;
     justify-content: space-between;
     max-width: 630px;
     margin-top: 107px;
     margin-bottom: 45px ;
+    
 }
 
-.button_right_title_Rostov{
+.button_right_title.active{
     border-style: none;
     border-bottom: 2px solid #E3B873;
     background:transparent;
@@ -968,22 +988,9 @@ margin-right: 19px;
     text-transform: uppercase;
     color: #E3B873;  
     padding: 0;
-    margin-right: 60px;   
-}
-
-.button_right_title_sochi{
-    background:transparent;
-    border-style: none;
-    font-family: 'Yeseva One';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 19px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.3);
-    padding: 0;
-    margin-right: 60px;
-}
+    text-decoration: none;
+    
+} 
 
 .button_right_title{
     background:transparent;
@@ -996,6 +1003,26 @@ margin-right: 19px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.3);
     padding: 0;
+    text-decoration: none; 
+}
+
+.flat_slider_right{
+    background-size: cover;
+    width: 679px;
+    height: 482px;
+    position: relative;
+}
+
+.flat_slider{
+    display: none;
+}
+
+.flat_slider.active{
+    display: block;
+    width: 679px;
+    height: 482px;
+    overflow: hidden;
+    position: relative;
 }
 
 .images_pikcher{
@@ -1055,8 +1082,8 @@ margin-right: 19px;
     height: 434px;
     background-size: cover;
     position: relative;
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url(../images/video.png);
-    margin-top: -173px;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url(../images/video.svg);
+    margin-top: -164px;
     margin-bottom: 61px;
 }
 
@@ -1066,7 +1093,7 @@ margin-right: 19px;
         height: 207px;
         background-size: cover;
         position: relative;
-        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url(../images/video.png);
+        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url(../images/video.svg);
         margin: 0;
         margin-top: 0;
         margin-bottom: 28px;
@@ -1077,14 +1104,32 @@ margin-right: 19px;
 .img_oracle{
     position: relative;
     margin-top: 174px;
-    margin-left: 365px;
+    display: flex;
+    justify-content: center;
 }
 
 @media screen and (max-width: 768px){
     .img_oracle{
+        display: flex;
+        justify-content: center;
         margin: 0;
         margin-top: 60px;
-        margin-left: 125px;
+        
+        }
+}
+.play_mob{
+    display: none;
+}
+
+@media screen and (max-width: 768px){
+    .play_mob{
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .play_port{
+        display: none;
         }
 }
 /*video sryle end*/
@@ -1341,7 +1386,7 @@ margin-right: 19px;
 }
 
 .tools{
-    background-image: url(../images/tools.svg);
+    background-image: url(../images/tolls.svg);
     width: 114px;
     height: 28px;
     background-image: no-repeat center;
@@ -1377,42 +1422,42 @@ margin-right: 19px;
 }
 
 .redecorating1{
-    background-image: url(../images/redecorating.png);
+    background-image: url(../images/redecorat1.svg);
     width: 392px;
     height: 421px;
 }
 
 @media screen and (max-width: 768px){
     .redecorating1{
-        background-image: url(../images/redecorating2.jpg);
+        background-image: url(../images/redecorating_mob.svg);
     width: 340px;
     height: 365px;
     }
 }
 
 .redecorating2{
-    background-image: url(../images/overhaul.png);
+    background-image: url(../images/overhaul.svg);
     width: 392px;
     height: 421px;
 }
 
 @media screen and (max-width: 768px){
     .redecorating2{
-        background-image: url(../images/overhaul2.jpg);
+        background-image: url(../images/overhaul_mob.svg);
     width: 340px;
     height: 365px;
     }
 }
 
 .redecorating3{
-    background-image: url(../images/desiner.png);
+    background-image: url(../images/designer.svg);
     width: 392px;
     height: 421px;
 }
 
 @media screen and (max-width: 768px){
     .redecorating3{
-        background-image: url(../images/desiner2.png);
+        background-image: url(../images/designer_mob.svg);
     width: 340px;
     height: 365px;
     }
@@ -1535,7 +1580,7 @@ margin-right: 19px;
 
 .house{
     height: 726px;
-    background: transparent url(../images/house.png) no-repeat;
+    background: transparent url(../images/house.svg) no-repeat;
     z-index: -1;
     
 }
@@ -1843,7 +1888,7 @@ margin-right: 19px;
 
 .fantasies_fon{
     height: 864px;
-    background-image: url(../images/fantasies.png);
+    background-image: url(../images/fantasies.svg);
     background-size: cover;
     margin: 0 auto;
 }
@@ -1953,7 +1998,7 @@ margin-right: 19px;
 }
 
 .heands{
-    background-image: url(../images/heads.png);
+    background-image: url(../images/hand.svg);
     width: 114px;
     height: 27px;
     background-size: cover;
@@ -1974,14 +2019,14 @@ margin-right: 19px;
     font-size: 18px;
     line-height: 29px;
     text-align: center;
-    color: #363636;
-    
+    color: #363636;    
 }
 
 .cards_list_iteam{
     display: flex;
     justify-content: space-between;
     height: 455px;
+    margin-top: 39px;
 }
 
 .cards_list{
@@ -2052,7 +2097,7 @@ margin-right: 19px;
     height: 252px;
     margin-top: 50px;
     display: flex;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93)),url(../images/citi4.png);
+  
 
 }
 /*clients sryle end*/
@@ -2225,7 +2270,7 @@ margin-right: 19px;
 .map_black_grey{
     width: 950px;
     height: 465px;
-    background-image: url(../images/map.png);
+    background-image: url(../images/map.svg);
 }
 
 @media screen and (max-width: 768px){
@@ -2254,7 +2299,7 @@ margin-right: 19px;
 
 .tower_fon{
     width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(../images/tower.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(../images/citi.svg);
     background-repeat: no-repeat;
     background-size: 100%;
     margin-top: -107px;
@@ -2317,7 +2362,7 @@ margin-right: 19px;
 }
 @media screen and (max-width: 768px){
         .mob_but_clock{
-            background-image: url(../images/oclok.jpg);
+            background-image: url(../images/clock_mob.svg);
             width: 340px;
             height: 240px;
             margin-top: -140px;
@@ -2368,7 +2413,7 @@ margin-right: 19px;
 
 @media screen and (max-width: 768px){
     .map_black_mob{
-        background-image: url(../images/map2.jpg);
+        background-image: url(../images/map.svg);
         width: 340px;
         height: 255px;
     }
@@ -2409,3 +2454,7 @@ margin-right: 19px;
         justify-content: center;
     }
 }
+
+
+
+
